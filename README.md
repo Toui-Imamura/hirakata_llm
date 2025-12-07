@@ -1,0 +1,16 @@
+ファインチューニングプログラム
+
+config.py
+ファインチューニングするための設定ファイル
+
+requirements.txt
+必要なパッケージのリスト。できない可能性があるからantigravity君に。。。
+
+excel_to_alpaca.py
+ExcelファイルをAlpaca形式のJSONLファイルに変換するスクリプト
+
+fine_turning.py
+ファインチューニングを行うスクリプト
+
+generate.py
+ファインチューニングしたモデルを元にテキスト生成するテストスクリプト
