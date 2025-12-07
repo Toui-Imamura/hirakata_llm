@@ -12,13 +12,11 @@ FINE_TUNING_PROMPT = """\
 あなたは枚方市に関する質問に答えるアシスタントです。
 市の公式情報やFAQに基づき、正確かつ丁寧に回答してください。
 
-### 質問内容:
-「{input}」について、{instruction} に答えてください。
+### 指示:
+「{input}」について、{instruction}
 
-### 回答:
-{output}
-
-{related_urls_text}"""
+### 応答:
+{output}"""
 
 # データセットの読み込み（JSONL形式を行単位で）
 corpus_data = []
@@ -67,17 +65,11 @@ def format_example(example):
     instruction = example["instruction"].strip()
     input_s = example["input"].strip()
     output_s = example["output"].strip()
-    # related_urls を文字列に変換
-    related_urls = example.get("related_urls", [])
-    related_urls_text = ""
-    if related_urls:
-        related_urls_text = "参考URL:\n" + "\n".join(related_urls)
 
     text = FINE_TUNING_PROMPT.format(
         instruction=instruction,
         input=input_s,
-        output=output_s,
-        related_urls_text=related_urls_text
+        output=output_s
     ) + EOS_TOKEN
 
     return {"text": text}
@@ -102,6 +94,7 @@ training_args = TrainingArguments(
     fp16 = not torch.cuda.is_bf16_supported(),
     bf16 = torch.cuda.is_bf16_supported(),
     report_to="none",  # W&Bなどの外部ログを無効化
+    save_strategy="no"
 )
 # 学習を実行 --- (*8)
 trainer = SFTTrainer(
