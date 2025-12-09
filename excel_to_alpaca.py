@@ -20,22 +20,13 @@ df = pd.read_excel(EXCEL_FILE, index_col=0)
 records = []
 
 for _, row in df.iterrows():
-    urls = [
-        clean_text(row["関連するURL1"]),
-        clean_text(row["関連するURL2"]),
-        clean_text(row["関連するURL3"])
-    ]
-    urls = [u for u in urls if isinstance(u, str) and u.strip()]
-
     record = {
         "instruction": clean_text(row["質問内容"]),
         "input": "",
         "output": clean_text(row["回答内容"]),
-        "related_urls": urls
     }
 
     records.append(record)
-
 # JSON で保存
 with open(JSON_DATASET_FILE, "w", encoding="utf-8") as f:
     for r in records:
