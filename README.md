@@ -1,6 +1,6 @@
 ファインチューニングプログラム
 
-h_bot/hirakata_bot  
+root   
 ├── __pycache__  
 ├── .venv  
 ├── corpus  
