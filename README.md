@@ -1,8 +1,8 @@
 ファインチューニングプログラム
 
-h_bot/hirakata_bot
-├── __pycache__
-├── .venv
+h_bot/hirakata_bot  
+├── __pycache__  
+├── .venv  
 ├── corpus
 ├── data(ここ直下にexcelファイル置く)
 ├── model
