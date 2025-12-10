@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 """Fine-Tuning済モデルを元にテキスト生成する"""
 import torch
 from unsloth import FastLanguageModel
@@ -66,6 +64,3 @@ if __name__ == "__main__":
         print(">>>", prompt)
         print(generate(prompt))
 
-
-
->>>>>>> noURL
