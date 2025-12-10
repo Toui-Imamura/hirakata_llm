@@ -109,5 +109,5 @@ trainer = SFTTrainer(
 trainer.train()
 
 # 学習したモデルを保存 --- (*9)
-model.save_pretrained(MODEL_OUTPUT_DIR)
-tokenizer.save_pretrained(TOKENIZER_DIR)
+model.save_pretrained(DIR_MODEL)
+tokenizer.save_pretrained(DIR_MODEL)
