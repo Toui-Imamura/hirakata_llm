@@ -18,7 +18,7 @@ CORPUS_TARGET_FILES = os.path.join(DIR_CORPUS, "hirakata_corpus_target_files.jso
 MODEL_NAME = "j23039/hirakata_llm:latest"
 OLLAMA_TIMEOUT = 30  # Ollamaのタイムアウト時間（秒）
 MAX_SEQ_LENGTH = 2048
-MAX_STEPS = 500 # 学習の最大ステップ数
+MAX_STEPS = 1200 # 学習の最大ステップ数
 MAX_DATASET_SIZE = 3000 # データセットの最大サイズ。
 # ディレクトリの作成 --- (*4)
 os.makedirs(DIR_CORPUS_TEXT, exist_ok=True)
