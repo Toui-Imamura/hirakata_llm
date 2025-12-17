@@ -10,6 +10,7 @@ def extract_files_from_corpus():
 
     file_list = []
 
+
     for root, _dirs, files in os.walk(config.DIR_CORPUS_TEXT):
         for file in files:
             if not file.endswith(".txt"):
