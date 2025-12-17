@@ -14,5 +14,10 @@ corpus/*
 
 /unsloth_compiled_cache
 
+#wiki関連
+wiki/corpus/
+wiki/text/
+wiki/model/
+
 # 仮想環境 
 .venv/
