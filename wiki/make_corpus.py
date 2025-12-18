@@ -1,7 +1,7 @@
 """LLMを使ってWikipediaから枚方コーパスを自動生成するスクリプト"""
 import json
 import requests
-from config import *
+import hirakata_bot.config as config
 
 # 使用モデルと API URL
 MODEL_NAME = "llama3.2:3b"  # 軽量版 LLaMA3
@@ -67,19 +67,19 @@ def generate_alpaca_format(file_list):
             continue
 
         alpaca_data.append({
-            "instruction": "枚方市について説明してください。",
+            "instruction": "次の対象ついて説明してください。",
             "input": title,
             "output": summary
         })
 
     # JSON に出力
-    with open(CORPUS_FILE_JSON, "w", encoding="utf-8") as fp:
+    with open(config.JSON_WIKI_DATASET_FILE, "w", encoding="utf-8") as fp:
         json.dump({"train": alpaca_data}, fp, ensure_ascii=False, indent=2)
 
     print("枚方用Alpaca形式のJSONを出力しました。")
 
 # 実行
 if __name__ == "__main__":
-    with open(CORPUS_TARGET_FILES, "r", encoding="utf-8") as f:
+    with open(config.JSON_WIKI_TARGET_FILES, "r", encoding="utf-8") as f:
         target_files = json.load(f)
         generate_alpaca_format(target_files)
