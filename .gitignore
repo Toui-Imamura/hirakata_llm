@@ -2,6 +2,9 @@
 *.pyc 
 __pycache__/ 
 
+# キャッシュファイル
+unsloth_compiled_cache/
+
 # 隠しファイル 
 data/*
 !data/.gitkeep
@@ -12,7 +15,6 @@ model/*
 corpus/*
 !corpus/.gitkeep
 
-/unsloth_compiled_cache
 
 #wiki関連
 wiki/corpus/
