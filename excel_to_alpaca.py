@@ -28,13 +28,11 @@ for _, row in df.iterrows():
 
     records.append(record)
 # JSON で保存
-with open(JSON_DATASET_FILE, "w", encoding="utf-8") as f:
+with open(JSON_XLSX_DATASET_FILE, "w", encoding="utf-8") as f:
     for r in records:
         f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-print("JSON を保存しました:", JSON_DATASET_FILE)
-
-
+print("JSON を保存しました:", JSON_XLSX_DATASET_FILE)
 
 
 
